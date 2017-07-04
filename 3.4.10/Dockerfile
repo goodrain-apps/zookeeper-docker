@@ -31,7 +31,7 @@ RUN set -x \
     && wget -q "http://www.apache.org/dist/zookeeper/$DISTRO_NAME/$DISTRO_NAME.tar.gz" \
     && tar -xzf "$DISTRO_NAME.tar.gz" \
     && mv "$DISTRO_NAME/conf/"* "$ZOO_CONF_DIR" \
-    && rm -r "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc" \
+    && rm -r "$GNUPGHOME" "$DISTRO_NAME.tar.gz" \
     && apk del .build-deps
 
 WORKDIR $DISTRO_NAME
