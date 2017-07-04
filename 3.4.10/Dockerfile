@@ -29,8 +29,8 @@ ENV ZK_URL="http://pkg.goodrain.com/zookeeper"
 RUN set -x \
     && apk add --no-cache --virtual .build-deps \
         gnupg \
-    && wget -q "$ZK_URL/$DISTRO_NAME/$DISTRO_NAME.tar.gz" \
-    && wget -q "$ZK_URL/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc" \
+    && wget -q "$ZK_URL/$DISTRO_NAME.tar.gz" \
+    && wget -q "$ZK_URL/$DISTRO_NAME.tar.gz.asc" \
     && export GNUPGHOME="$(mktemp -d)" \
     && gpg --keyserver ha.pool.sks-keyservers.net --recv-key "$GPG_KEY" \
     && gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz" \
