@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM goodrainapps/openjdk:8u131-jre-alpine
 MAINTAINER Elisey Zanko <elisey.zanko@gmail.com>
 
 # Install required packages
